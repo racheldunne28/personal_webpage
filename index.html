@@ -14,19 +14,30 @@
   <body>
     <div class="catContainer"></div>
     <div class="featherContainer"></div>
-    <div class="intro">
-      <h1>World Wide Witches</h1>
-      We welcome witches with well wishes (when we want).
-    </div>
     <div class="party">
-      Witch-themed party tbc
+      <h1>Witch-themed party coming soon</h1>
+      Do you like manifesting/black cats/the moon? If yes then you're invited to our witch-themed party, date TBC. 
+      You MUST dress up as a witch, or you will not be allowed in. For those who insist on not dressing up, we will 
+      procure suitably ugly alternative outfits for them to wear in order to enter. 
+      <br>
+      <br>
+      <div class="djsignup">
+        <p>Please fill in this form to apply to DJ.</p>
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter name" class="textEntry" id="name" required>
+        <br>
+        <label for="just"><b>Example song</b></label>
+        <input type="text" placeholder="Enter song" class="textEntry", id="just" required>
+        <div class="clearfix">
+          <button type="submit" class="btn" id="djbtn">Apply</button>
+        </div>
+      </div>
     </div>
     <div class="spell">
       <h2>Open source spells</h2>
         <ul id = "spellList">
-            <li>Add spells here</li>
         </ul>
-        <input class="newListEntry" type="text" placeholder="Add spell" id="newSpell">
+        <input class="textEntry" type="text" placeholder="Add spell" id="newSpell">
         <button class="btn" id="spellbtn">Add list item</button>
         </div>
     </div>
@@ -34,6 +45,7 @@
       :root {
         --main-bg-color: rgb(35, 30, 41);
         --main-font-color: rgb(114, 105, 117);
+        --main-header-color: rgb(80, 25, 34);
         --main-font-family: "Shippori Mincho B1", serif;
         --nth-child: 1;
       }
@@ -43,7 +55,7 @@
         font-family: var(--main-font-family);
       }
       h1 {
-        color: var(--main-font-color);
+        color: var(--main-header-color);
         font-family: var(--main-font-family);
       }
       *:nth-child(1) {
@@ -119,9 +131,9 @@
       }
       .cat {
         position: absolute;
-        width: 300px;
-        bottom: 20px;
-        right: 20px;
+        width: 500px;
+        bottom: 0px;
+        right: 10px;
       }
       @keyframes featherFall {
         from {
@@ -150,10 +162,26 @@
         color: var(--main-font-color);
         font-family: var(--main-font-family);
       }
-      .newListEntry {
+      .textEntry {
         background: var(--main-bg-color);
         color: var(--main-font-color);
         font-family: var(--main-font-family);
+        width: 30%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+      }
+      .party {
+        position: absolute;
+        top: 10px;
+        left: 50px;
+        right: 400px;
+        font-size: 2rem;
+      }
+      .djsignup {
+        font-size: 1rem;
+
+        
       }
     </style>
     <script>
