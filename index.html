@@ -22,6 +22,7 @@
         --main-bg-color: rgb(35, 30, 41);
         --main-font-color: rgb(114, 105, 117);
         --main-font-family: "Shippori Mincho B1", serif;
+        --nth-child: 1;
       }
 
       body {
@@ -29,25 +30,40 @@
         color: var(--main-font-color);
         font-family: var(--main-font-family);
       }
+      *:nth-child(1) {
+        --nth-child: 1;
+      }
+      *:nth-child(2) {
+        --nth-child: 2;
+      }
+      *:nth-child(3) {
+        --nth-child: 3;
+      }
+      *:nth-child(4) {
+        --nth-child: 4;
+      }
+      *:nth-child(5) {
+        --nth-child: 5;
+      }
+      *:nth-child(6) {
+        --nth-child: 6;
+      }
+      *:nth-child(7) {
+        --nth-child: 7;
+      }
+      *:nth-child(8) {
+        --nth-child: 8;
+      }
       .feather {
         position: absolute;
         width: 32px;
         top: -70px;
-        left: 0;
+        left: calc(var(--nth-child) * 150px);
         animation-name: featherFall;
         animation-duration: 5s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
-      }
-      .feather:nth-child(2) {
-        position: absolute;
-        width: 32px;
-        top: -70px;
-        left: 100px;
-        animation-name: featherFall;
-        animation-duration: 5s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
+        animation-delay: calc(var(--nth-child) * 1s);
       }
       @keyframes featherFall {
         from {
@@ -88,10 +104,13 @@
         );
         featherContainer.appendChild(feather);
       }
-      for (let i = 0; i <= 4; i++) {
-        console.log(i);
+      for (let i = 0; i <= 10; i++) {
         addFeather();
       }
+      //var feathers = document.getElementsByClassName("feather");
+      //for (i = 0; i < feathers.length; i++) {
+      //  feathers[i].style.animationduration = String(i) + "s";
+      //}
     </script>
   </body>
 </html>
