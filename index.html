@@ -14,9 +14,18 @@
   <body>
     <div class="catContainer"></div>
     <div class="featherContainer"></div>
-    <div class="content">
-      <h1>Hello</h1>
-      Welcome to my witch website
+    <div class="intro">
+      <h1>World Wide Witches</h1>
+      We welcome witches with well wishes (when we want).
+    </div>
+    <div class="spell">
+      <h2>Open source spells</h2>
+        <ul id = "spellList">
+            <li>Add spells here</li>
+        </ul>
+        <input class="newListEntry" type="text" placeholder="Add spell" id="newSpell">
+        <button class="spellbtn" id="spellbtn">Add list item</button>
+        </div>
     </div>
     <style>
       :root {
@@ -25,9 +34,12 @@
         --main-font-family: "Shippori Mincho B1", serif;
         --nth-child: 1;
       }
-
       body {
         background: var(--main-bg-color);
+        color: var(--main-font-color);
+        font-family: var(--main-font-family);
+      }
+      h1 {
         color: var(--main-font-color);
         font-family: var(--main-font-family);
       }
@@ -87,6 +99,21 @@
       .cat path {
         fill: black;
       }
+      .spell {
+        position: absolute;
+        right: 50px;
+        top: 20px;
+      }
+      .spellbtn {
+        background: var(--main-bg-color);
+        color: var(--main-font-color);
+        font-family: var(--main-font-family);
+      }
+      .newListEntry {
+        background: var(--main-bg-color);
+        color: var(--main-font-color);
+        font-family: var(--main-font-family);
+      }
     </style>
     <script>
       const featherContainer = document.querySelector(".featherContainer");
@@ -142,6 +169,20 @@
         catContainer.appendChild(cat);
       }
       addCat();
+      function getNewListValue() {
+        // Selecting the input element and get its value
+        var inputVal = document.getElementById("newSpell").value;
+        return inputVal;
+      }
+      const spellInput = document.querySelector(".spellbtn");
+      spellInput.addEventListener("click", function () {
+        let inputVal = getNewListValue();
+        var entry = document.createElement("li");
+        entry.appendChild(document.createTextNode(inputVal));
+        spellList.appendChild(entry);
+        console.log("New spell is " + inputVal);
+      });
+
       //var feathers = document.getElementsByClassName("feather");
       //for (i = 0; i < feathers.length; i++) {
       //  feathers[i].style.animationduration = String(i) + "s";
