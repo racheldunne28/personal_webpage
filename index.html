@@ -15,8 +15,6 @@
     <h1>Hello</h1>
     Welcome to my witch website
     <svg
-      width="182"
-      height="362"
       viewBox="0 0 182 362"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -42,10 +40,30 @@
         color: var(--main-font-color);
         font-family: var(--main-font-family);
       }
+      .feather {
+        position: absolute;
+        width: 32px;
+        top: -70px;
+        left: 0;
+        animation-name: featherFall;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+      }
+      @keyframes featherFall {
+        from {
+          transform: translateY(0px) rotate(100deg);
+        }
+
+        to {
+          transform: translateY(110vh) rotate(150deg);
+        }
+      }
+      .feather path {
+        fill: white;
+      }
     </style>
     <script>
       const feather = document.querySelector(".feather");
-      console.log(feather);
     </script>
   </body>
 </html>
