@@ -27,7 +27,7 @@
             <li>Add spells here</li>
         </ul>
         <input class="newListEntry" type="text" placeholder="Add spell" id="newSpell">
-        <button class="spellbtn" id="spellbtn">Add list item</button>
+        <button class="btn" id="spellbtn">Add list item</button>
         </div>
     </div>
     <style>
@@ -145,7 +145,7 @@
         right: 50px;
         top: 20px;
       }
-      .spellbtn {
+      .btn {
         background: var(--main-bg-color);
         color: var(--main-font-color);
         font-family: var(--main-font-family);
@@ -215,7 +215,7 @@
         var inputVal = document.getElementById("newSpell").value;
         return inputVal;
       }
-      const spellInput = document.querySelector(".spellbtn");
+      const spellInput = document.querySelector("#spellbtn");
       spellInput.addEventListener("click", function () {
         let inputVal = getNewListValue();
         var entry = document.createElement("li");
